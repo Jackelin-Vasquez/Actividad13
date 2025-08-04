@@ -73,10 +73,25 @@ def mostrar_estudiantes():
             print(f"Curso:{curso_name}: {nota}")
 
 
-agregar_estudiante()
-agregar_curso()
-consultar_estudiante()
-promedio()
-verificar_aprobar()
-mostrar_estudiantes()
-
+#Programa principal
+while True:
+    menu_principal()
+    opcion= input("Ingrese una ocpion:")
+    match opcion:
+        case "1":
+            agregar_estudiante()
+        case "2":
+            agregar_curso()
+        case "3":
+            consultar_estudiante()
+        case "4":
+            promedio()
+        case "5":
+            verificar_aprobar()
+        case "6":
+            mostrar_estudiantes()
+        case "7":
+            print("Saliendo del programa...")
+            break
+        case _:
+            print("Opcion no valida...")
