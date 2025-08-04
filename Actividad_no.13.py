@@ -32,3 +32,26 @@ def consultar_estudiante():
         print(f"Nombre:{dato["nombre"]}\nCarrera:{dato["carrera"]}")
         for clave,dato in estudiante.items():
             print(f"Cursos:{dato["cursos"]}")
+
+#Función calcular promedio
+def promedio():
+    if id in estudiante: #Busca id en diccionario estudiantes
+        dato = estudiante[id]
+        curso= dato["cursos"]
+        if len(curso) == 0: #Cuenta cantidad de cursos en diccionario
+            print("El estudiante no tiene cursos...")
+        else:
+            suma= 0
+            for nota in curso.values():
+                suma += nota
+            promedio = suma/ len(curso)
+            return promedio
+    else:
+        print("Estudiante no encontrado...")
+
+agregar_estudiante()
+agregar_curso()
+agregar_curso()
+consultar_estudiante()
+promedio()
+print(promedio())
