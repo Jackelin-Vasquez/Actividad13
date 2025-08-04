@@ -62,9 +62,21 @@ def verificar_aprobar():
     else:
         print("Estudiante no encontrado...")
 
+#función mostrar estudiantes
+def mostrar_estudiantes():
+    for clave,valor in estudiante.items():
+        print("---Estudiante---")
+        print(f"Nombre:{valor["nombre"]}")
+        print(f"Carrera:{valor["carrera"]}")
+        print("---CURSOS DE ESTUDIATE---")
+        for curso_name,nota in valor["cursos"].items():
+            print(f"Curso:{curso_name}: {nota}")
+
+
 agregar_estudiante()
 agregar_curso()
 consultar_estudiante()
 promedio()
 verificar_aprobar()
+mostrar_estudiantes()
 
