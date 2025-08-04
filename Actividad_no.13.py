@@ -17,3 +17,9 @@ def agregar_estudiante():
         "carrera":carrera,
         "cursos":{}
     }
+#Función agregar curso y nota
+def agregar_curso():
+    id=input("Ingrese ID de estudiante:")
+    nombre_curso=input("Ingrese nombre de curso a agregar:")
+    nota= float(input("Ingrese nota de curso:"))
+    estudiante[id]["cursos"][nombre_curso]=nota   #Se agrega curso y nota en diccionario de cursos :)
