@@ -23,3 +23,12 @@ def agregar_curso():
     nombre_curso=input("Ingrese nombre de curso a agregar:")
     nota= float(input("Ingrese nota de curso:"))
     estudiante[id]["cursos"][nombre_curso]=nota   #Se agrega curso y nota en diccionario de cursos :)
+
+#Función Consultar Estudiante
+def consultar_estudiante():
+    id=input("Ingrese estudiante a consultar:")
+    if id in estudiante:
+        dato=estudiante[id]
+        print(f"Nombre:{dato["nombre"]}\nCarrera:{dato["carrera"]}")
+        for clave,dato in estudiante.items():
+            print(f"Cursos:{dato["cursos"]}")
