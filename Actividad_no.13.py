@@ -9,14 +9,17 @@ def menu_principal():
 #Función para agregar estudiante
 def agregar_estudiante():
     id=input("Ingrese ID de estudiante:")
-    nombre=input("Ingrese nombre de estudiante:")
-    carrera=input("Ingrese carrera o programa academico:")
+    if id in estudiante:   # condición que valida si id aparece en diccionario para evirar que se repita
+        print("Estudiante ya resgitrado...")
+    else:
+        nombre=input("Ingrese nombre de estudiante:")
+        carrera=input("Ingrese carrera o programa academico:")
 
-    estudiante[id]={
-        "nombre":nombre,
-        "carrera":carrera,
-        "cursos":{}
-    }
+        estudiante[id]={
+            "nombre":nombre,
+            "carrera":carrera,
+            "cursos":{}
+        }
 def recorrer_cursos(id):
     if id in estudiante:
         cursos=estudiante[id]["cursos"]
