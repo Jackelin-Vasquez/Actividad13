@@ -49,17 +49,18 @@ def consultar_estudiante():
         recorrer_cursos(id)
 
 #Función calcular promedio
-def promedio():
+def promedio(id):
     if id in estudiante: #Busca id en diccionario estudiantes
         dato = estudiante[id]
         curso= dato["cursos"]
-        if len(curso) == 0: #Cuenta cantidad de cursos en diccionario
-            print("El estudiante no tiene cursos...")
-        else:
-            suma= 0
-            for nota in curso.values():
-                suma += nota
+        suma= 0
+        for nota in curso.values():
+            suma += nota
+        try:
             promedio = suma/ len(curso)
+        except ZeroDivisionError:
+            print("Error.División por cero...")
+        else:
             return promedio
     else:
         print("Estudiante no encontrado...")
@@ -99,7 +100,9 @@ while True:
         case "3":
             consultar_estudiante()
         case "4":
-            promedio()
+            id=input("Ingrese id de estudiante:")
+            prom=promedio(id)
+            print(f"El promedio del estudiante es {prom}")
         case "5":
             verificar_aprobar()
         case "6":
