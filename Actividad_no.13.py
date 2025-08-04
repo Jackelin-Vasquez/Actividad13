@@ -17,6 +17,13 @@ def agregar_estudiante():
         "carrera":carrera,
         "cursos":{}
     }
+def recorrer_cursos(id):
+    if id in estudiante:
+        cursos=estudiante[id]["cursos"]
+        print("---CURSOS DE ESTUDIATE---")
+        for curso in cursos:
+            print(f"Curso:{curso} Nota: {cursos[curso]}")
+
 #Función agregar curso y nota
 def agregar_curso():
     id=input("Ingrese ID de estudiante:")
@@ -30,8 +37,7 @@ def consultar_estudiante():
     if id in estudiante:
         dato=estudiante[id]
         print(f"Nombre:{dato["nombre"]}\nCarrera:{dato["carrera"]}")
-        for clave,dato in estudiante.items():
-            print(f"Cursos:{dato["cursos"]}")
+        recorrer_cursos(id)
 
 #Función calcular promedio
 def promedio():
@@ -64,13 +70,12 @@ def verificar_aprobar():
 
 #función mostrar estudiantes
 def mostrar_estudiantes():
-    for clave,valor in estudiante.items():
+    for clave,dato in estudiante.items():
         print("---Estudiante---")
-        print(f"Nombre:{valor["nombre"]}")
-        print(f"Carrera:{valor["carrera"]}")
+        print(f"Nombre:{dato["nombre"]}")
+        print(f"Carrera:{dato["carrera"]}")
         print("---CURSOS DE ESTUDIATE---")
-        for curso_name,nota in valor["cursos"].items():
-            print(f"Curso:{curso_name}: {nota}")
+        recorrer_cursos(id)
 
 
 #Programa principal
