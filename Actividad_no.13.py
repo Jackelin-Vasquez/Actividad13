@@ -4,7 +4,7 @@ estudiante={}
 def menu_principal():
     print("---MENÚ---")
     print("1.Agregar estudiante.\n2.Agregar curso con nota.\n3.Consultar Estudiante.")
-    print("4.Calcular promedio de estudiante\n5.Verificar si aprueba.\n6.Mostrar todos los estudiantes.\nSalir del programa")
+    print("4.Calcular promedio de estudiante\n5.Verificar si aprueba.\n6.Mostrar todos los estudiantes.\n7.Salir del programa")
 
 #Función para agregar estudiante
 def agregar_estudiante():
@@ -30,6 +30,9 @@ def recorrer_cursos(id):
 #Función agregar curso y nota
 def agregar_curso():
     id=input("Ingrese ID de estudiante:")
+    if id not in estudiante:
+        print("Estudiante no encontrado...")
+        return
     nombre_curso=input("Ingrese nombre de curso a agregar:")
     try:
         nota= float(input("Ingrese nota de curso:"))
@@ -47,6 +50,8 @@ def consultar_estudiante():
         dato=estudiante[id]
         print(f"Nombre:{dato["nombre"]}\nCarrera:{dato["carrera"]}")
         recorrer_cursos(id)
+    else:
+        print("Estudiante no encontrado...")
 
 #Función calcular promedio
 def promedio(id):
@@ -72,7 +77,7 @@ def verificar_aprobar():
         curso= dato["cursos"]
         for nota in curso.values():
             if nota < 61:
-                print(f"{dato["nombra"]} no aprobado...")
+                print(f"{dato["nombre"]} no aprobado...")
             else:
                 print(f"{dato["nombre"]} aprobado...")
     else:
@@ -84,7 +89,7 @@ def mostrar_estudiantes():
         print("---Estudiante---")
         print(f"Nombre:{dato["nombre"]}")
         print(f"Carrera:{dato["carrera"]}")
-        recorrer_cursos(id)
+        recorrer_cursos(clave)
 
 
 #Programa principal
