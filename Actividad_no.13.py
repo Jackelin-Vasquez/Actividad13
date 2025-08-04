@@ -28,8 +28,12 @@ def recorrer_cursos(id):
 def agregar_curso():
     id=input("Ingrese ID de estudiante:")
     nombre_curso=input("Ingrese nombre de curso a agregar:")
-    nota= float(input("Ingrese nota de curso:"))
-    estudiante[id]["cursos"][nombre_curso]=nota   #Se agrega curso y nota en diccionario de cursos :)
+    try:
+        nota= float(input("Ingrese nota de curso:"))
+    except ValueError:
+        print("Error.Valor incorrecto...")
+    else:
+        estudiante[id]["cursos"][nombre_curso]=nota   #Se agrega curso y nota en diccionario de cursos :)
 
 #Función Consultar Estudiante
 def consultar_estudiante():
