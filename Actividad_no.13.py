@@ -30,6 +30,8 @@ def agregar_curso():
     nombre_curso=input("Ingrese nombre de curso a agregar:")
     try:
         nota= float(input("Ingrese nota de curso:"))
+        if nota < 1 or nota >100:
+            print("Nota no valida...")
     except ValueError:
         print("Error.Valor incorrecto...")
     else:
