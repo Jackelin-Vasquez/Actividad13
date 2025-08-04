@@ -48,10 +48,23 @@ def promedio():
             return promedio
     else:
         print("Estudiante no encontrado...")
+#Función que verifica si estudiante aprueba:
+def verificar_aprobar():
+    id= input("Ingrese id de estudiante para verificar si aprobo:")
+    if id in estudiante:
+        dato= estudiante[id]
+        curso= dato["cursos"]
+        for nota in curso.values():
+            if nota < 61:
+                print(f"{dato["nombra"]} no aprobado...")
+            else:
+                print(f"{dato["nombre"]} aprobado...")
+    else:
+        print("Estudiante no encontrado...")
 
 agregar_estudiante()
 agregar_curso()
-agregar_curso()
 consultar_estudiante()
 promedio()
-print(promedio())
+verificar_aprobar()
+
