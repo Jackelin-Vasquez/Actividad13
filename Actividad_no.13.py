@@ -84,7 +84,6 @@ def mostrar_estudiantes():
         print("---Estudiante---")
         print(f"Nombre:{dato["nombre"]}")
         print(f"Carrera:{dato["carrera"]}")
-        print("---CURSOS DE ESTUDIATE---")
         recorrer_cursos(id)
 
 
