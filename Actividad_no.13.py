@@ -98,7 +98,7 @@ def archivo():
         nuevo_archivo.write(f"ID:{id}\n")
         nuevo_archivo.write(f"Nombre:{datos["nombre"]}\n")
         nuevo_archivo.write(f"Carrera:{datos["carrera"]}\n")
-        nuevo_archivo.write(f"Cursos: {datos["cursos"]}")
+        nuevo_archivo.write(f"Cursos:{datos["cursos"]}")
 #Programa principal
 while True:
     try:
