@@ -91,7 +91,14 @@ def mostrar_estudiantes():
         print(f"Carrera:{dato["carrera"]}")
         recorrer_cursos(clave)
 
-
+#Funcion para guardar archivo
+def archivo():
+    nuevo_archivo = open("archivo_estudiantes","w")
+    for id,datos in estudiante.items():
+        nuevo_archivo.write(f"ID:{id}\n")
+        nuevo_archivo.write(f"Nombre:{datos["nombre"]}\n")
+        nuevo_archivo.write(f"Carrera:{datos["carrera"]}\n")
+        nuevo_archivo.write(f"Cursos: {datos["Cursos"]}")
 #Programa principal
 while True:
     try:
@@ -113,6 +120,7 @@ while True:
             case "6":
                 mostrar_estudiantes()
             case "7":
+                archivo()
                 print("Saliendo del programa...")
                 break
             case _:
